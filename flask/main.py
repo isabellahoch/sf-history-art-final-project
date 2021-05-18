@@ -57,13 +57,19 @@ def internal_server_error(e):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	info = get_info()
-	return render_template('index.html', info=info)
+    info = get_info()
+    info["landmarks"] = landmark_data
+    return render_template('index.html', info=info)
 
 @app.route('/map')
 def map():
 	info = get_info()
 	return render_template('map.html', info=info)
+
+@app.route('/bibliography')
+def bibliography():
+	info = get_info()
+	return render_template('bibliography.html', info=info)
 
 @app.route('/landmarks')
 def landmarks():
