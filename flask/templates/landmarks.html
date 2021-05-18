@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block destinationsisactive %}active{% endblock %}
+{% block title %}Landmarks | SF Running Map{% endblock %}
+{% block content %}
+<div class="container-fluid align-items-center justify-content-center">
+    {% for landmark in info.landmarks %}
+    <div class="row">
+        <h1>{{ landmark.name }}</h1>
+        <a href="https://www.google.com/maps/dir//{{ landmark.address }}"><h3><i class="fas fa-map-marked-alt"></i> {{ landmark.address }}</a></h3>
+        {% if landmark.image %}<img src="{{ landmark.image }}">{% endif %}
+        <p>{{ landmark.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

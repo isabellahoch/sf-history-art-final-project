@@ -15,6 +15,29 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Monoton&family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <style>
+          h1, h2, h3, h4, h5 {
+            width:100%;
+          }
+          body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #cfe5cf !important;
+    font-family: 'Montserrat', sans-serif;
+    }
+    h1,h2,h3,h4,h5 {
+        font-family: 'Poiret One', cursive;
+    }
+
+    .btn-custom {
+    color: #000;
+    background-color: #f6def6 !important;
+    border-color: #f6def6 !important;
+}
+a {
+    color: forestgreen !important;
+}
         /* body,html{
     height: 100%;
     width: 100%;
@@ -59,10 +82,14 @@ a {
     </head>
     <body>
       <!-- <nav class="collapse navbar-collapse justify-content-md-center" id="navbar"> -->
-        <nav class="navbar navbar-light bg-light text-center align-items-center justify-content-center" id="nav">
-        <ul class="navbar-nav" id="navbar-list">
+        <nav class="navbar navbar-light bg-light text-center align-items-center justify-content-center" id="nav" style="background-color:#cff6cf !important">
+        <h1>San Francisco History & Art Final Project: Running</h1>
+          <ul class="navbar-nav" id="navbar-list">
           <li class="nav-item {% block homeisactive %}{% endblock %}">
-            <a class="nav-link disabled" href="/">San Francisco Running <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item {% block aboutisactive %}{% endblock %}">
+            <a class="nav-link" href="/about">About</a>
           </li>
           <li class="nav-item {% block mapisactive %}{% endblock %}">
             <a class="nav-link" href="/map">Map</a>
@@ -79,7 +106,7 @@ a {
             </div>
           </li> -->
           <li class="nav-item {% block destinationsisactive %}{% endblock %}">
-            <a class="nav-link" href="/destinations">Destinations</a>
+            <a class="nav-link" href="/landmarks">Landmarks</a>
           </li>
         </ul>
       </nav>

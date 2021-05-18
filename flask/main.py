@@ -23,6 +23,8 @@ strava_code = "ef68cbad0ee3a6d0bf644a03d60207ee5df3c014"
 import requests
 import json
 
+from data import landmark_data
+
 def get_info():
 	info = {}
 	info["sources"] = []
@@ -62,6 +64,17 @@ def index():
 def map():
 	info = get_info()
 	return render_template('map.html', info=info)
+
+@app.route('/landmarks')
+def landmarks():
+    info = get_info()
+    info["landmarks"] = landmark_data
+    return render_template('landmarks.html', info=info)
+
+@app.route('/about')
+def about():
+    info = get_info()
+    return render_template('about.html', info=info)
 
 @app.route('/scenic-runs')
 def scenic_runs():
