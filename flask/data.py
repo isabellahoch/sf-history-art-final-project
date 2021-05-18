@@ -4,7 +4,10 @@ landmark_data = [{"name":"Kezar Stadium","address":"670 Kezar Dr, San Francisco,
 
 new_landmarks = []
 for this_dict in landmark_data:
-    this_dict["description"] = this_dict["description"].decode('utf-8')
+    try:
+        this_dict["description"] = this_dict["description"].decode('utf-8')
+    except:
+        print('error idk')
     new_landmarks.append(this_dict)
 
 landmark_data = new_landmarks
